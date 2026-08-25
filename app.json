@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Clip",
+    "slug": "clip-editor",
+    "version": "2.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourcompany.clipeditor",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Clip needs access to your photo library to import and export videos.",
+        "NSPhotoLibraryAddUsageDescription": "Clip saves your edited videos to your photo library.",
+        "NSMicrophoneUsageDescription": "Clip needs microphone access to preview audio while editing."
+      }
+    },
+    "android": {
+      "package": "com.clip.editor",
+      "permissions": [
+        "READ_MEDIA_VIDEO",
+        "READ_MEDIA_AUDIO"
+      ],
+      "versionCode": 21,
+      "blockedPermissions": [
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-media-library",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Clip needs access to your photo library to import videos."
+        }
+      ],
+      [
+        "ffmpeg-expo",
+        {
+          "includeX86": true
+        }
+      ]
+    ],
+    "newArchEnabled": true
+  }
+}
